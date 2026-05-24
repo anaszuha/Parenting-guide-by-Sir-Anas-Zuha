@@ -43,7 +43,8 @@ function handleInput() {
 
 
   // FIND RULE
-
+output.innerText =
+  "Analyzing parenting situation...";
   const result = findRule(input, ctx);
 
   output.innerText = result;
@@ -105,5 +106,20 @@ General Parenting Principles:
 
 Suggestion:
 Add this new behavior into rules.js later.
+
+document
+  .getElementById("inputBox")
+  .addEventListener("keydown", function(event) {
+
+    if (
+      event.key === "Enter" &&
+      !event.shiftKey
+    ) {
+
+      event.preventDefault();
+
+      handleInput();
+    }
+});
 `;
 }
