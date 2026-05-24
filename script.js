@@ -74,7 +74,10 @@ function findRule(input, ctx) {
 
     for (let tag of rule.tags) {
 
-      if (input.includes(tag)) {
+      if (
+  input.includes(tag) ||
+  tag.includes(input)
+) {
 
         return rule.response(ctx);
       }
