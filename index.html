@@ -24,6 +24,7 @@
   <link rel="stylesheet"
         href="style.css">
 
+  <!-- LOTTIE -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
 
 </head>
@@ -33,21 +34,39 @@
   <div class="container">
 
     <h1>Parenting Guide by Sir Anas Zuha</h1>
+
     <p class="seo-text">
 
-This parenting simulator helps parents understand
-child behavior, confidence issues, bullying,
-discipline problems, communication skills,
-screen addiction and emotional development
-through practical parenting guidance.
+      This parenting simulator helps parents understand
+      child behavior, confidence issues, bullying,
+      discipline problems, communication skills,
+      screen addiction and emotional development
+      through practical parenting guidance.
 
-</p>
+    </p>
+
+
+    <h2>Common Parenting Problems</h2>
+
+    <ul class="seo-list">
+      <li>Child confidence issues</li>
+      <li>Bullying</li>
+      <li>Mobile addiction</li>
+      <li>Bad academic performance</li>
+      <li>Anger and aggression</li>
+      <li>Communication skills</li>
+    </ul>
+
+
+    <!-- PROFILE -->
 
     <div class="profile-box">
 
       <h2>Child Profile</h2>
 
-      <input type="number" id="age" placeholder="Enter Child Age">
+      <input type="number"
+             id="age"
+             placeholder="Enter Child Age">
 
       <select id="gender">
         <option value="boy">Boy</option>
@@ -64,12 +83,14 @@ through practical parenting guidance.
     </div>
 
 
+    <!-- PROBLEM -->
+
     <div class="problem-box">
 
       <h2>Problem / Goal</h2>
 
-      <textarea id="inputBox" placeholder="
-Examples:
+      <textarea id="inputBox"
+placeholder="Examples:
 
 child gets bad marks
 child lies frequently
@@ -80,11 +101,20 @@ child is aggressive
 improve english speaking
 "></textarea>
 
-      <button onclick="handleInput()">Analyze</button>
+      <button onclick="handleInput()">
+        Analyze
+      </button>
 
     </div>
 
-<div id="animationBox"></div>
+
+    <!-- ANIMATION -->
+
+    <div id="animationBox"></div>
+
+
+    <!-- OUTPUT -->
+
     <div id="output"></div>
 
   </div>
