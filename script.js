@@ -55,12 +55,17 @@ function handleInput() {
 
   // SMALL DELAY FOR UX
 
-  setTimeout(() => {
-
+   setTimeout(() => {
     const result = findRule(input, ctx);
-
     output.innerText = result;
 
+    // === ADDED FOR AUTO-SCROLL ===
+    // This smoothly scrolls down to the result text once it renders
+    output.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    });
+    
   }, 500);
 }
 
