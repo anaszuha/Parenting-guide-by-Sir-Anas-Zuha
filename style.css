@@ -15,8 +15,13 @@ body {
   color: #444;
 }
 
+.seo-list {
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
 
-/* MAIN CONTAINER */
+
+/* CONTAINER */
 
 .container {
   max-width: 900px;
@@ -85,6 +90,15 @@ button:hover {
 }
 
 
+/* ANIMATION */
+
+#animationBox {
+  width: 320px;
+  height: 320px;
+  margin: 20px auto;
+}
+
+
 /* OUTPUT */
 
 #output {
@@ -108,5 +122,10 @@ button:hover {
 
   textarea {
     height: 180px;
+  }
+
+  #animationBox {
+    width: 240px;
+    height: 240px;
   }
 }
