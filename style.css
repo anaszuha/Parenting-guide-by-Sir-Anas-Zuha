@@ -1,4 +1,9 @@
 body {
+  .seo-text {
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
   font-family: Arial, sans-serif;
   background: #eef2f7;
   margin: 0;
