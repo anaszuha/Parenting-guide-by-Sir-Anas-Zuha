@@ -1,14 +1,22 @@
 body {
-  .seo-text {
-  text-align: center;
-  line-height: 1.7;
-  margin-bottom: 30px;
-}
   font-family: Arial, sans-serif;
   background: #eef2f7;
   margin: 0;
   padding: 20px;
 }
+
+
+/* SEO TEXT */
+
+.seo-text {
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+
+/* MAIN CONTAINER */
 
 .container {
   max-width: 900px;
@@ -19,13 +27,21 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+
+/* HEADINGS */
+
 h1 {
   text-align: center;
+  color: #1e3a8a;
 }
 
 h2 {
   margin-top: 20px;
+  color: #1e293b;
 }
+
+
+/* INPUTS */
 
 input,
 select,
@@ -40,9 +56,16 @@ textarea {
   box-sizing: border-box;
 }
 
+
+/* TEXTAREA */
+
 textarea {
   height: 220px;
+  resize: vertical;
 }
+
+
+/* BUTTON */
 
 button {
   width: 100%;
@@ -53,11 +76,16 @@ button {
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
   background: #1e40af;
+  transform: scale(1.01);
 }
+
+
+/* OUTPUT */
 
 #output {
   margin-top: 30px;
@@ -65,6 +93,20 @@ button:hover {
   padding: 20px;
   border-radius: 10px;
   white-space: pre-line;
-  line-height: 1.6;
+  line-height: 1.7;
   border-left: 5px solid #2563eb;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 18px;
+  }
+
+  textarea {
+    height: 180px;
+  }
 }
