@@ -7,12 +7,19 @@ const rules = [
   {
     id: "low_marks",
 
+    priority: 7,
+
+    type: "problem",
+
+    animation: "study",
+
     tags: [
       "bad marks",
       "low marks",
       "failed",
       "poor result",
-      "exam"
+      "exam",
+      "study weak"
     ],
 
     ageRange: [5, 18],
@@ -22,15 +29,10 @@ const rules = [
       let text = `
 PROBLEM: Poor Academic Performance
 
-Child Context:
-Age: ${ctx.age}
-Gender: ${ctx.gender}
-Culture: ${ctx.region}
-
 Possible Causes:
 - Fear of failure
 - Weak fundamentals
-- Excessive pressure
+- Pressure
 - Anxiety
 `;
 
@@ -40,14 +42,14 @@ Possible Causes:
 Young Child Strategy:
 - Make learning playful
 - Use stories and games
-- Avoid harsh punishment
+- Avoid punishment
 `;
 
       } else if (ctx.age <= 13) {
 
         text += `
 Middle Age Strategy:
-- Build daily study habits
+- Build study routine
 - Encourage consistency
 - Help organize homework
 `;
@@ -63,35 +65,6 @@ Teen Strategy:
 
       }
 
-
-      if (ctx.region === "asian") {
-
-        text += `
-Cultural Note:
-- Reduce comparison pressure
-- Balance academics with emotional wellbeing
-`;
-
-      }
-
-
-      if (ctx.gender === "boy") {
-
-        text += `
-Observation:
-- Boys may express frustration through avoidance or aggression
-`;
-
-      } else {
-
-        text += `
-Observation:
-- Girls may internalize stress emotionally
-`;
-
-      }
-
-
       text += `
 Parent Actions:
 1. Appreciate effort
@@ -100,7 +73,6 @@ Parent Actions:
 4. Build confidence gradually
 
 Expected Outcome:
-- Reduced exam fear
 - Better study consistency
 `;
 
@@ -117,6 +89,12 @@ Expected Outcome:
   {
     id: "bullying",
 
+    priority: 9,
+
+    type: "problem",
+
+    animation: "bullying",
+
     tags: [
       "bullied",
       "bullying",
@@ -128,49 +106,20 @@ Expected Outcome:
 
     response: (ctx) => {
 
-      let text = `
+      return `
 PROBLEM: Child Being Bullied
 
-Possible Effects:
-- Fear
-- Anxiety
-- Social withdrawal
-- Low confidence
-`;
-
-      if (ctx.age <= 10) {
-
-        text += `
-Young Child Strategy:
-- Reassure emotional safety
-- Inform teachers quickly
-- Teach simple confident responses
-`;
-
-      } else {
-
-        text += `
-Teen Strategy:
-- Teach assertive communication
-- Build resilience
-- Teach safe conflict handling
-`;
-
-      }
-
-      text += `
 Parent Actions:
 1. Listen calmly
 2. Never blame child
-3. Build confidence
-4. Encourage supportive friendships
+3. Inform school if necessary
+4. Build confidence
+5. Teach assertive communication
 
 Expected Outcome:
 - Improved confidence
 - Better emotional safety
 `;
-
-      return text;
     }
   },
 
@@ -182,6 +131,12 @@ Expected Outcome:
 
   {
     id: "mobile_addiction",
+
+    priority: 7,
+
+    type: "problem",
+
+    animation: "mobile",
 
     tags: [
       "mobile",
@@ -195,47 +150,19 @@ Expected Outcome:
 
     response: (ctx) => {
 
-      let text = `
-PROBLEM: Screen / Mobile Addiction
+      return `
+PROBLEM: Mobile / Screen Addiction
 
-Possible Causes:
-- Dopamine dependency
-- Boredom
-- Lack of alternatives
-`;
-
-      if (ctx.age <= 8) {
-
-        text += `
-Young Child Strategy:
-- Increase physical play
-- Reduce passive screen exposure
-- Use family activities
-`;
-
-      } else {
-
-        text += `
-Older Child Strategy:
-- Teach self-control gradually
-- Encourage hobbies and sports
-- Explain screen effects
-`;
-
-      }
-
-      text += `
 Parent Actions:
 1. Set consistent limits
-2. Replace habit instead of only banning
-3. Model balanced screen use yourself
+2. Replace screen time with activities
+3. Encourage sports and hobbies
+4. Avoid excessive parental phone usage
 
 Expected Outcome:
 - Reduced dependency
 - Better attention span
 `;
-
-      return text;
     }
   },
 
@@ -248,6 +175,12 @@ Expected Outcome:
   {
     id: "confidence",
 
+    priority: 6,
+
+    type: "goal",
+
+    animation: "confidence",
+
     tags: [
       "confidence",
       "shy",
@@ -259,43 +192,20 @@ Expected Outcome:
 
     response: (ctx) => {
 
-      let text = `
+      return `
 GOAL: Build Confidence
-`;
 
-      if (ctx.age <= 8) {
-
-        text += `
-Young Child Strategy:
-- Encourage exploration
-- Allow small decisions
-- Appreciate effort often
-`;
-
-      } else {
-
-        text += `
-Teen Strategy:
-- Give responsibility
-- Encourage independent thinking
-- Respect opinions
-`;
-
-      }
-
-      text += `
 Parent Actions:
 1. Avoid comparison
-2. Avoid public criticism
-3. Encourage participation
+2. Encourage participation
+3. Give responsibilities
 4. Respect child dignity
+5. Allow decision making
 
 Expected Outcome:
 - Better self-expression
 - Reduced social fear
 `;
-
-      return text;
     }
   },
 
@@ -307,6 +217,12 @@ Expected Outcome:
 
   {
     id: "lying",
+
+    priority: 8,
+
+    type: "problem",
+
+    animation: "calm_talk",
 
     tags: [
       "lying",
@@ -325,18 +241,16 @@ PROBLEM: Lying Behavior
 Possible Causes:
 - Fear of punishment
 - Lack of trust
-- Avoiding embarrassment
 
 Parent Actions:
 1. Stay calm
-2. Ask WHY the child lied
-3. Focus on honesty
-4. Reward truthfulness
-5. Avoid humiliation
+2. Ask WHY child lied
+3. Reward honesty
+4. Avoid humiliation
 
 Expected Outcome:
-- Increased trust
 - Better honesty
+- Increased trust
 `;
     }
   },
@@ -350,6 +264,12 @@ Expected Outcome:
   {
     id: "aggression",
 
+    priority: 9,
+
+    type: "problem",
+
+    animation: "anger",
+
     tags: [
       "aggressive",
       "hitting",
@@ -362,39 +282,49 @@ Expected Outcome:
 
     response: (ctx) => {
 
-      let text = `
+      return `
 PROBLEM: Aggressive Behavior
 
-Possible Causes:
-- Emotional frustration
-- Feeling unheard
-- Learned aggressive behavior
-`;
-
-      if (ctx.gender === "boy") {
-
-        text += `
-Observation:
-- Boys may externalize frustration physically more often
-`;
-
-      }
-
-      text += `
 Parent Actions:
 1. Stay calm
 2. Stop harmful behavior safely
 3. Teach emotional vocabulary
-4. Encourage sports and activity
+4. Encourage sports
 5. Model calm conflict resolution
 
 Expected Outcome:
 - Better emotional regulation
 - Reduced aggression
 `;
-
-      return text;
     }
   }
 
 ];
+
+
+
+
+// =====================================================
+// ANIMATIONS
+// =====================================================
+
+const animations = {
+
+  calm_talk:
+    "https://assets2.lottiefiles.com/packages/lf20_touohxv0.json",
+
+  study:
+    "https://assets9.lottiefiles.com/packages/lf20_myejiggj.json",
+
+  bullying:
+    "https://assets2.lottiefiles.com/packages/lf20_x62chJ.json",
+
+  confidence:
+    "https://assets1.lottiefiles.com/packages/lf20_49rdyysj.json",
+
+  mobile:
+    "https://assets10.lottiefiles.com/packages/lf20_2LdLki.json",
+
+  anger:
+    "https://assets4.lottiefiles.com/packages/lf20_tll0j4bb.json"
+};
