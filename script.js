@@ -1,28 +1,33 @@
 function handleInput() {
 
-  const age = parseInt(document.getElementById("age").value);
+  const age =
+    parseInt(document.getElementById("age").value);
 
-  const gender = document.getElementById("gender").value;
+  const gender =
+    document.getElementById("gender").value;
 
-  const region = document.getElementById("region").value;
+  const region =
+    document.getElementById("region").value;
 
-  const input = document
-    .getElementById("inputBox")
-    .value
-    .toLowerCase();
+  const input =
+    document
+      .getElementById("inputBox")
+      .value
+      .toLowerCase();
 
-  const output = document.getElementById("output");
+  const output =
+    document.getElementById("output");
 
 
   // VALIDATION
 
   if (!age || age < 1) {
 
-    output.innerText = "Please enter valid child age.";
+    output.innerText =
+      "Please enter valid child age.";
 
     return;
   }
-
 
   if (input.trim() === "") {
 
@@ -31,6 +36,12 @@ function handleInput() {
 
     return;
   }
+
+
+  // LOADING MESSAGE
+
+  output.innerText =
+    "Analyzing parenting situation...";
 
 
   // CHILD CONTEXT
@@ -42,18 +53,22 @@ function handleInput() {
   };
 
 
-  // FIND RULE
-output.innerText =
-  "Analyzing parenting situation...";
-  const result = findRule(input, ctx);
+  // SMALL DELAY FOR UX
 
-  output.innerText = result;
+  setTimeout(() => {
+
+    const result = findRule(input, ctx);
+
+    output.innerText = result;
+
+  }, 500);
 }
 
 
 
+
 // =====================================================
-// RULE MATCH ENGINE
+// FIND RULE
 // =====================================================
 
 function findRule(input, ctx) {
@@ -71,22 +86,35 @@ function findRule(input, ctx) {
     }
 
 
-    // KEYWORD MATCHING
+    // MATCH SCORE
+
+    let score = 0;
 
     for (let tag of rule.tags) {
 
       if (
-  input.includes(tag) ||
-  tag.includes(input)
-) {
-
-        return rule.response(ctx);
+        input.includes(tag) ||
+        tag.includes(input)
+      ) {
+        score++;
       }
+    }
+
+
+    // MATCH FOUND
+
+    if (score > 0) {
+
+      if (rule.animation) {
+        loadAnimation(rule.animation);
+      }
+
+      return rule.response(ctx);
     }
   }
 
 
-  // DEFAULT RESPONSE
+  // DEFAULT
 
   return `
 No exact parenting rule matched.
@@ -103,9 +131,43 @@ General Parenting Principles:
 8. Teach through participation
 9. Model good behavior yourself
 10. Support emotional safety
+`;
+}
 
-Suggestion:
-Add this new behavior into rules.js later.
+
+
+
+// =====================================================
+// LOAD ANIMATION
+// =====================================================
+
+function loadAnimation(animationName) {
+
+  const container =
+    document.getElementById("animationBox");
+
+  container.innerHTML = "";
+
+  lottie.loadAnimation({
+
+    container: container,
+
+    renderer: "svg",
+
+    loop: true,
+
+    autoplay: true,
+
+    path: animations[animationName]
+  });
+}
+
+
+
+
+// =====================================================
+// ENTER KEY SUPPORT
+// =====================================================
 
 document
   .getElementById("inputBox")
@@ -121,5 +183,3 @@ document
       handleInput();
     }
 });
-`;
-}
