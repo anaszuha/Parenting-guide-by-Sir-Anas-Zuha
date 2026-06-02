@@ -78,11 +78,12 @@ function handleInput() {
 
 function findRule(input, ctx) {
 
+  let bestMatch = null;
+  let bestScore = 0;
+
   for (let rule of rules) {
 
-
     // AGE FILTER
-
     if (
       ctx.age < rule.ageRange[0] ||
       ctx.age > rule.ageRange[1]
@@ -90,13 +91,10 @@ function findRule(input, ctx) {
       continue;
     }
 
-
     // MATCH SCORE
-
     let score = 0;
 
     for (let tag of rule.tags) {
-
       if (
         input.includes(tag) ||
         tag.includes(input)
@@ -105,27 +103,29 @@ function findRule(input, ctx) {
       }
     }
 
-
-    // MATCH FOUND
-
+    // PICK HIGHEST SCORE, USE PRIORITY AS TIEBREAKER
     if (score > 0) {
+      const weighted = score * 10 + rule.priority;
 
-      if (rule.animation) {
-        loadAnimation(rule.animation);
+      if (weighted > bestScore) {
+        bestScore = weighted;
+        bestMatch = rule;
       }
-
-      return rule.response(ctx);
     }
   }
 
+  if (bestMatch) {
+    if (bestMatch.animation) {
+      loadAnimation(bestMatch.animation);
+    }
+    return bestMatch.response(ctx);
+  }
 
   // DEFAULT
-
   return `
 No exact parenting rule matched.
 
 General Parenting Principles:
-
 1. Respect child dignity
 2. Avoid comparison
 3. Encourage independence
@@ -136,6 +136,7 @@ General Parenting Principles:
 8. Teach through participation
 9. Model good behavior yourself
 10. Support emotional safety
+...
 `;
 }
 
