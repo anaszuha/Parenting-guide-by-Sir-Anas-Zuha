@@ -579,7 +579,6 @@ Expected Outcome:
   },
 
 
-
   // =====================================================
   // AGGRESSION
   // =====================================================
@@ -620,8 +619,617 @@ Expected Outcome:
 - Reduced aggression
 `;
     }
-  }
+  },
 
+// =====================================================
+// MISBEHAVIOR - TODDLER (Age 2-4)
+// =====================================================
+
+{
+  id: "misbehavior_toddler",
+
+  priority: 9,
+
+  type: "problem",
+
+  animation: "calm_talk",
+
+  tags: [
+    "misbehaving",
+    "misbehavior",
+    "misbehaves",
+    "fights",
+    "fighting",
+    "fight",
+    "abusing",
+    "abusive",
+    "bad language",
+    "naughty",
+    "disobedient",
+    "not listening",
+    "biting",
+    "hitting others",
+    "throwing food",
+    "refuses to sleep",
+
+  ],
+
+  ageRange: [2, 4],
+
+  response: (ctx) => {
+
+    return `
+PROBLEM: Misbehavior in Toddler (Age 2–4)
+
+Understanding:
+At this age, misbehavior is normal.
+The child is exploring your boundaries.
+Language skills are still developing.
+They cannot fully express needs.
+
+Possible Causes:
+- Hunger or tiredness
+- Seeking attention
+- Frustration from inability to communicate
+- Copying observed behavior
+
+Parent Actions:
+1. Stay calm — never shout or hit.
+2. Get down to child's eye level.
+3. Use short, simple sentences.
+4. Redirect attention to a different activity.
+5. Maintain consistent daily routines.
+6. Give limited choices to build cooperation.
+   Example: Do you want water or juice?
+7. Appreciate good behavior immediately.
+8. Avoid saying NO too frequently.
+   Replace with a positive alternative.
+
+Parenting Principle:
+The child understands everything.
+There is always a reason behind behavior.
+Find the reason instead of punishing.
+
+Expected Outcome:
+- Reduced misbehavior over time
+- Better cooperation
+- Stronger parent-child bond
+`;
+  }
+},
+
+
+
+
+// =====================================================
+// MISBEHAVIOR - EARLY CHILDHOOD (Age 5-8)
+// =====================================================
+
+{
+  id: "misbehavior_early",
+
+  priority: 9,
+
+  type: "problem",
+
+  animation: "calm_talk",
+
+  tags: [
+    "misbehaving",
+    "misbehavior",
+    "misbehaves",
+    "fights",
+    "fighting",
+    "fight",
+    "abusing",
+    "abusive",
+    "bad language",
+    "rude",
+    "disrespectful",
+    "not obeying",
+    "arguing",
+    "answering back",
+    "defiant",
+    "ignoring parents"
+  ],
+
+  ageRange: [5, 8],
+
+  response: (ctx) => {
+
+    return `
+PROBLEM: Misbehavior in Early Childhood (Age 5–8)
+
+Understanding:
+Child is testing your boundaries actively.
+This is a normal developmental phase.
+They respond better to reasoning than punishment.
+
+Possible Causes:
+- Seeking independence
+- Imitating peers or media
+- Feeling unheard or disrespected
+- Inconsistent rules at home
+
+Parent Actions:
+1. Listen before reacting.
+2. Explain WHY a rule exists.
+   Example: We sleep early so our brain grows strong.
+3. Hold a calm discussion, not a lecture.
+4. Allow child input in small decisions.
+5. Respect the child — speak as you want to be spoken to.
+6. Avoid public humiliation.
+7. Give natural consequences where safe.
+   Example: If you skip dinner, you will feel hungry.
+8. Model the behavior you expect.
+
+Parenting Principle:
+Respect the child the way you want them to become.
+If you want a confident child, treat them with confidence.
+
+Expected Outcome:
+- More cooperative behavior
+- Better self-discipline
+- Improved mutual respect
+`;
+  }
+},
+
+
+
+
+// =====================================================
+// MISBEHAVIOR - PRETEEN (Age 9-12)
+// =====================================================
+
+{
+  id: "misbehavior_preteen",
+
+  priority: 9,
+
+  type: "problem",
+
+  animation: "calm_talk",
+
+  tags: [
+    "misbehaving",
+    "misbehavior",
+    "misbehaves",
+    "fights",
+    "fighting",
+    "fight",
+    "abusing",
+    "abusive",
+    "bad language",
+    "back answering",
+    "ignoring",
+    "rude behavior",
+    "stubborn preteen",
+    "defiant child",
+    "disrespect",
+    "not following rules"
+  ],
+
+  ageRange: [9, 12],
+
+  response: (ctx) => {
+
+    return `
+PROBLEM: Misbehavior in Preteen (Age 9–12)
+
+Understanding:
+Child is developing a strong personal identity.
+Peer influence increases significantly.
+They need respect more than commands.
+
+Possible Causes:
+- Peer pressure
+- Desire for independence
+- Feeling controlled or compared
+- Stress from school or social life
+
+Parent Actions:
+1. Have a structured argument session.
+   Listen to the child's reasoning fully.
+2. Decide together based on strongest argument.
+   Do not simply impose your authority.
+3. Avoid comparison with siblings or other children.
+4. Give meaningful responsibilities at home.
+   Example: Let them manage Eid shopping budget.
+5. Allow natural consequences for harmless choices.
+6. Acknowledge their growing maturity openly.
+7. Make family duties enjoyable together.
+   Example: Everyone cleans the house together today.
+
+Parenting Principle:
+Do not impose your choice unless there is real harm.
+Let the child experience and learn from safe mistakes.
+
+Expected Outcome:
+- Reduced power struggles
+- Better sense of responsibility
+- Stronger family respect
+`;
+  }
+},
+
+
+
+
+// =====================================================
+// MISBEHAVIOR - TEENAGER (Age 13-18)
+// =====================================================
+
+{
+  id: "misbehavior_teen",
+
+  priority: 9,
+
+  type: "problem",
+
+  animation: "calm_talk",
+
+  tags: [
+    "teenager misbehaving",
+    "misbehaves",
+    "fights",
+    "fighting",
+    "fight",
+    "abusing",
+    "abusive",
+    "bad language",
+    "teen rude",
+    "teenage defiance",
+    "teen rebellion",
+    "disrespectful teenager",
+    "teen not listening",
+    "teenager ignoring parents",
+    "teen attitude"
+  ],
+
+  ageRange: [13, 18],
+
+  response: (ctx) => {
+
+    return `
+PROBLEM: Misbehavior in Teenager (Age 13–18)
+
+Understanding:
+Teenagers are forming adult identity.
+They need autonomy, not authority.
+Harsh control leads to rebellion or withdrawal.
+
+Possible Causes:
+- Feeling disrespected or not trusted
+- Peer influence and social pressure
+- Academic or emotional stress
+- Observing inconsistent behavior in parents
+
+Parent Actions:
+1. Treat them as young adults, not children.
+2. Share your own life experiences openly.
+3. Hold debate-style discussions on disagreements.
+   Decide based on logic, not rank.
+4. Do not corrupt your own example.
+   Avoid: cutting queues, unfair use of resources,
+   dishonest shortcuts in front of them.
+5. Allow personal choices in style, hobbies, and preferences.
+6. Set only safety-based non-negotiables clearly.
+7. Pray for them and dream big with them.
+8. Remind them of their potential regularly.
+
+Parenting Principle:
+The child is always watching — like a camera recording.
+Your behavior is their biggest lesson.
+
+Expected Outcome:
+- Reduced rebellion
+- Stronger mutual trust
+- Better adult decision making
+`;
+  }
+},
+
+
+
+
+// =====================================================
+// READING DIFFICULTY - UNDER AGE
+// =====================================================
+
+{
+  id: "reading_difficulty",
+
+  priority: 8,
+
+  type: "problem",
+
+  animation: "study",
+
+  tags: [
+    "cannot read",
+    "reading problem",
+    "slow reader",
+    "does not like reading",
+    "reading difficulty",
+    "struggles with words",
+    "letter recognition",
+    "reading delay"
+  ],
+
+  ageRange: [3, 10],
+
+  response: (ctx) => {
+
+    let text = `
+PROBLEM: Reading Difficulty in Young Child
+
+Understanding:
+Reading readiness varies per child.
+Forcing too early can create a lasting fear of reading.
+The goal is to make reading enjoyable, not pressured.
+
+Possible Causes:
+- Introduced to reading too formally too early
+- Lack of exposure to books at home
+- Possible learning difference (dyslexia etc.)
+- Low confidence or fear of making mistakes
+`;
+
+    if (ctx.age <= 5) {
+
+      text += `
+Strategy for Age 3–5:
+- Read aloud to the child daily.
+- Point at pictures and describe them together.
+- Use alphabet songs and rhymes.
+- Do not force letter memorization under pressure.
+- Let the child hold and explore books freely.
+`;
+
+    } else if (ctx.age <= 7) {
+
+      text += `
+Strategy for Age 6–7:
+- Use phonics-based learning games.
+- Read together — alternate sentences.
+- Allow child to choose their own books.
+- Celebrate every small reading success.
+- Never mock mispronunciation.
+`;
+
+    } else {
+
+      text += `
+Strategy for Age 8–10:
+- Identify if a learning difference is present.
+  Consult a specialist if delays persist.
+- Use audiobooks alongside physical books.
+- Match reading material to child's interests.
+- Build a small home book collection.
+`;
+    }
+
+    text += `
+Parent Actions:
+1. Make books visible and accessible at home.
+2. Read yourself — model reading behavior.
+3. Visit libraries or book fairs together.
+4. Never label child as slow or weak reader.
+5. Celebrate curiosity over perfection.
+
+Expected Outcome:
+- Growing interest in reading
+- Improved literacy over time
+- Stronger vocabulary and imagination
+`;
+
+    return text;
+  }
+},
+
+
+
+
+// =====================================================
+// WRITING DIFFICULTY - UNDER AGE
+// =====================================================
+
+{
+  id: "writing_difficulty",
+
+  priority: 8,
+
+  type: "problem",
+
+  animation: "study",
+
+  tags: [
+    "cannot write",
+    "writing problem",
+    "messy handwriting",
+    "writing delay",
+    "does not like writing",
+    "struggles with pencil",
+    "writing difficulty",
+    "letter formation"
+  ],
+
+  ageRange: [3, 10],
+
+  response: (ctx) => {
+
+    let text = `
+PROBLEM: Writing Difficulty in Young Child
+
+Understanding:
+Writing requires fine motor skill development.
+Each child develops this at their own pace.
+Pressure and punishment make it worse, not better.
+
+Possible Causes:
+- Fine motor skills still developing
+- Introduced to formal writing too early
+- Anxiety about making mistakes
+- Weak hand grip strength
+`;
+
+    if (ctx.age <= 5) {
+
+      text += `
+Strategy for Age 3–5:
+- Use playdough, clay, and drawing freely.
+- Practice with large crayons and chalk.
+- Do not focus on correct letter formation yet.
+- Make writing a play activity, not a school task.
+`;
+
+    } else if (ctx.age <= 7) {
+
+      text += `
+Strategy for Age 6–7:
+- Trace letters with finger before pencil.
+- Use dotted letter worksheets playfully.
+- Praise effort, never criticize shape.
+- Keep writing sessions short and positive.
+`;
+
+    } else {
+
+      text += `
+Strategy for Age 8–10:
+- Check pencil grip and correct gently.
+- Use lined notebooks with wide spacing.
+- Allow printed (block) letters if cursive is hard.
+- Consult school if difficulty is significant.
+`;
+    }
+
+    text += `
+Parent Actions:
+1. Provide drawing and coloring tools at home.
+2. Encourage free drawing without correction.
+3. Never tear or discard child's written work.
+4. Display their writing proudly at home.
+5. Avoid comparison with other children.
+
+Expected Outcome:
+- Improved fine motor skills
+- Better writing confidence
+- Gradual improvement in handwriting
+`;
+
+    return text;
+  }
+},
+
+
+
+
+// =====================================================
+// SPEAKING / SPEECH DELAY - UNDER AGE
+// =====================================================
+
+{
+  id: "speaking_difficulty",
+
+  priority: 9,
+
+  type: "problem",
+
+  animation: "confidence",
+
+  tags: [
+    "not speaking",
+    "speech delay",
+    "late talker",
+    "cannot speak clearly",
+    "stuttering",
+    "speaking problem",
+    "unclear speech",
+    "mute child",
+    "does not talk"
+  ],
+
+  ageRange: [1, 8],
+
+  response: (ctx) => {
+
+    let text = `
+PROBLEM: Speaking Difficulty or Speech Delay
+
+Understanding:
+Speech development timelines vary widely.
+A child who speaks late can still develop fully.
+Early support makes a significant difference.
+
+Possible Causes:
+- Hearing issue (get hearing checked first)
+- Bilingual home environment (normal and temporary)
+- Excessive screen time replacing conversation
+- Insufficient verbal interaction at home
+- Possible speech or language delay requiring support
+`;
+
+    if (ctx.age <= 3) {
+
+      text += `
+Strategy for Age 1–3:
+- Talk to the child constantly throughout the day.
+- Name objects clearly: This is a cup. This is water.
+- Sing nursery rhymes and repeat them daily.
+- Reduce screen time significantly.
+- Respond to every sound or gesture the child makes.
+- Do not speak for the child — give them time to try.
+`;
+
+    } else if (ctx.age <= 5) {
+
+      text += `
+Strategy for Age 4–5:
+- Have back-and-forth conversations daily.
+- Ask open questions: What did you see today?
+- Read picture books and ask the child to describe them.
+- Play pretend games that require speaking.
+- If speech is very unclear, consult a speech therapist.
+`;
+
+    } else {
+
+      text += `
+Strategy for Age 6–8:
+- Encourage the child to speak in full sentences.
+- Never complete their sentences for them.
+- Allow them to order food, ask shopkeepers etc.
+- Involve in family discussions.
+- If stuttering is present, consult a specialist calmly.
+`;
+    }
+
+    text += `
+Parent Actions:
+1. Get hearing assessed if speech is significantly delayed.
+2. Reduce screen time and increase face-to-face talk.
+3. Never mock, mimic, or laugh at speech errors.
+4. Consult a speech therapist if delay persists.
+5. Praise every speaking attempt warmly.
+
+Parenting Principle:
+Give the child responsibilities that require speaking.
+Example: Let them ask the shopkeeper for items themselves.
+This builds both speech and confidence together.
+
+Expected Outcome:
+- Gradual improvement in speech clarity
+- Better vocabulary and sentence formation
+- Increased communication confidence
+`;
+
+    return text;
+  }
+}
+  
+  
 ];
 
 
