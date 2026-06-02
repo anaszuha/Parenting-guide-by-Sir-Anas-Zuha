@@ -952,6 +952,7 @@ Expected Outcome:
 
   tags: [
     "cannot read",
+    "reading",
     "reading problem",
     "slow reader",
     "does not like reading",
@@ -1050,6 +1051,7 @@ Expected Outcome:
 
   tags: [
     "cannot write",
+    "writing",
     "writing problem",
     "messy handwriting",
     "writing delay",
