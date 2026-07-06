@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Parenting Guide by Sir Anas Zuha | Child Behavior, Confidence & Parenting Advice</title>
+
+  <meta name="description" content="Advanced parenting simulator and parenting guidance platform for child behavior, confidence, discipline, communication skills, bullying, studies and emotional development.">
+  <meta name="keywords" content="parenting guide, child psychology, parenting simulator, parenting tips, child confidence, bullying help, child discipline, parenting advice Pakistan">
+  <meta name="author" content="Sir Anas Zuha">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Parenting Guide by Sir Anas Zuha">
+  <meta property="og:description" content="Practical parenting guidance for child behavior, confidence, bullying and emotional development.">
+  <meta property="og:type" content="website">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Parenting Guide by Sir Anas Zuha",
+    "author": { "@type": "Person", "name": "Sir Anas Zuha" },
+    "description": "Practical parenting guidance for child behavior, confidence, bullying and emotional development."
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Lottie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🌱 Free Parenting Guidance</div>
+      <h1 class="hero-title">Every child is a gift.<br><em>Guide them with wisdom.</em></h1>
+      <p class="hero-sub">
+        Describe your child's challenge and get instant, age-specific guidance
+        based on proven parenting principles by <strong>Sir Anas Zuha</strong>.
+      </p>
+
+      <!-- Quick topic chips -->
+      <div class="chips">
+        <button class="chip" onclick="fillAndOpen('child has tantrums')">😤 Tantrums</button>
+        <button class="chip" onclick="fillAndOpen('mobile addiction')">📱 Screen Addiction</button>
+        <button class="chip" onclick="fillAndOpen('child is bullied')">😢 Bullying</button>
+        <button class="chip" onclick="fillAndOpen('low marks bad grades')">📚 Low Marks</button>
+        <button class="chip" onclick="fillAndOpen('child is anxious and stressed')">😰 Anxiety</button>
+        <button class="chip" onclick="fillAndOpen('child lacks confidence shy')">🌟 Confidence</button>
+        <button class="chip" onclick="fillAndOpen('child is aggressive and angry')">😠 Aggression</button>
+        <button class="chip" onclick="fillAndOpen('child lies frequently')">🤥 Lying</button>
+      </div>
+
+      <button class="hero-cta" onclick="scrollToForm()">
+        Analyze My Child's Situation ↓
+      </button>
+    </div>
+
+    <!-- Floating decorative circles -->
+    <div class="hero-blob b1"></div>
+    <div class="hero-blob b2"></div>
+    <div class="hero-blob b3"></div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       ANALYZER FORM
+  ═══════════════════════════════════════════ -->
+  <section class="form-section" id="analyzerSection">
+    <div class="container">
+
+      <div class="form-card">
+        <div class="form-header">
+          <span class="form-icon">👶</span>
+          <div>
+            <h2 class="form-title">Child Profile</h2>
+            <p class="form-hint">Tell us about your child so we can give the right advice</p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field-group">
+            <label>Child's Age</label>
+            <input type="number" id="age" placeholder="e.g. 7" min="1" max="18">
+          </div>
+          <div class="field-group">
+            <label>Gender</label>
+            <select id="gender">
+              <option value="boy">Boy</option>
+              <option value="girl">Girl</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Culture / Region</label>
+            <select id="region">
+              <option value="asian">Asian Culture</option>
+              <option value="western">Western Culture</option>
+              <option value="middle_east">Middle East Culture</option>
+              <option value="african">African Culture</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group" style="margin-top:16px">
+          <label>Describe the Problem or Goal</label>
+          <textarea id="inputBox" placeholder="Example: My child throws tantrums, refuses to sleep, gets low marks, is shy and lacks confidence, is addicted to mobile..."></textarea>
+        </div>
+
+        <button class="analyze-btn" onclick="handleInput()" id="analyzeBtn">
+          <span class="btn-text">🔍 Analyze Now</span>
+          <span class="btn-loading" style="display:none">⏳ Analyzing...</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       RESULT SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="result-section" id="resultSection" style="display:none">
+    <div class="container">
+
+      <div class="result-card">
+        <div id="animationBox"></div>
+        <div id="output"></div>
+
+        <button class="analyze-again-btn" onclick="analyzeAgain()">
+          ← Analyze Another Problem
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       10 PRINCIPLES SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="principles-section">
+    <div class="container">
+      <div class="section-eyebrow">The Foundation</div>
+      <h2 class="section-title">10 Parenting Principles by Sir Anas Zuha</h2>
+      <p class="section-sub">Wisdom that transforms the parent-child relationship</p>
+
+      <div class="principles-grid">
+
+        <div class="principle-card">
+          <div class="p-num">01</div>
+          <div class="p-body">
+            <h3>Child Understands Everything</h3>
+            <p>Treat your child as an intelligent human. Behave as if a camera is always recording you — because your child is.</p>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="p-num">02</div>
+          <div class="p-body">
+            <h3>No Pre-Conditioning</h3>
+            <p>Do not push the child toward doctor or engineer from day one. Let their interests emerge naturally.</p>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="p-num">03</div>
+          <div class="p-body">
+            <h3>Respect = Role Model</h3>
+            <p>Respect your child the way you want them to become. Want a commissioner? Treat them like one.</p>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="p-num">04</div>
+          <div class="p-body">
+            <h3>Allow Safe Choices</h3>
+            <p>Don't impose your preferences on harmless decisions. If the child wants a red shirt — let them wear it and learn.</p>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="p-num">05</div>
+          <div class="p-body">
+            <h3>Argue, Don't Impose</h3>
+            <p>For harmful choices, hold an argument session. Decide together based on the strongest reason — not parental rank.</p>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="p-num">06</div>
+          <div class="p-body">
+            <h3>Build Independence</h3>
+            <p>Let the child handle real tasks — shopping, bargaining, budgeting. Real life is the best teacher.</p>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="p-num">07</div>
+          <div class="p-body">
+            <h3>Work as a Family</h3>
+            <p>Today everyone sweeps together. Today everyone washes dishes. Hard work becomes joy when shared.</p>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="p-num">08</div>
+          <div class="p-body">
+            <h3>Never Compare Children</h3>
+            <p>Comparison kills confidence. Every child is unique and on their own timeline.</p>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="p-num">09</div>
+          <div class="p-body">
+            <h3>No Corruption in Parents</h3>
+            <p>Don't spit on roads, cut queues, or use resources unfairly in front of your child. They are always watching.</p>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="p-num">10</div>
+          <div class="p-body">
+            <h3>Pray & Dream Big</h3>
+            <p>Pray for your child daily. Speak big dreams into their life. Your belief in them is their first fuel.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       TOPICS SECTION (SEO)
+  ═══════════════════════════════════════════ -->
+  <section class="topics-section">
+    <div class="container">
+      <div class="section-eyebrow">What We Cover</div>
+      <h2 class="section-title">Common Parenting Challenges</h2>
+
+      <div class="topics-grid">
+        <div class="topic-card" onclick="fillAndOpen('child has tantrums')">
+          <div class="t-icon">😤</div>
+          <h3>Tantrums</h3>
+          <p>Manage meltdowns calmly with age-appropriate strategies</p>
+        </div>
+        <div class="topic-card" onclick="fillAndOpen('child is bullied at school')">
+          <div class="t-icon">😢</div>
+          <h3>Bullying</h3>
+          <p>Build confidence and handle school bullying effectively</p>
+        </div>
+        <div class="topic-card" onclick="fillAndOpen('mobile phone screen addiction')">
+          <div class="t-icon">📱</div>
+          <h3>Screen Addiction</h3>
+          <p>Reduce mobile dependency without conflict</p>
+        </div>
+        <div class="topic-card" onclick="fillAndOpen('child gets low marks in exam')">
+          <div class="t-icon">📚</div>
+          <h3>Low Marks</h3>
+          <p>Support academic performance without pressure</p>
+        </div>
+        <div class="topic-card" onclick="fillAndOpen('child is anxious worried stressed')">
+          <div class="t-icon">😰</div>
+          <h3>Anxiety & Stress</h3>
+          <p>Create emotional safety and reduce child anxiety</p>
+        </div>
+        <div class="topic-card" onclick="fillAndOpen('child lacks confidence is shy')">
+          <div class="t-icon">🌟</div>
+          <h3>Confidence</h3>
+          <p>Build lasting self-esteem and courage in children</p>
+        </div>
+        <div class="topic-card" onclick="fillAndOpen('child is aggressive and angry fighting')">
+          <div class="t-icon">😠</div>
+          <h3>Aggression</h3>
+          <p>Handle anger and aggressive behavior with calm methods</p>
+        </div>
+        <div class="topic-card" onclick="fillAndOpen('child unclear about future career goal')">
+          <div class="t-icon">🎯</div>
+          <h3>Future Direction</h3>
+          <p>Help child discover passion without imposing careers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-name">Parenting Guide by <strong>Sir Anas Zuha</strong></p>
+      <p class="footer-tagline">Raising the next generation with wisdom, respect, and love.</p>
+      <p class="footer-copy">Free resource for parents worldwide &nbsp;·&nbsp; Guidance based on real parenting principles</p>
+    </div>
+  </footer>
+
+
+  <script src="rules.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    function scrollToForm() {
+      document.getElementById("analyzerSection").scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => document.getElementById("age").focus(), 600);
+    }
+
+    function fillAndOpen(text) {
+      document.getElementById("inputBox").value = text;
+      scrollToForm();
+    }
+
+    function analyzeAgain() {
+      document.getElementById("resultSection").style.display = "none";
+      document.getElementById("analyzerSection").style.display = "block";
+      document.getElementById("output").innerHTML = "";
+      document.getElementById("animationBox").innerHTML = "";
+      scrollToForm();
+    }
+  </script>
+
+</body>
+</html>
